@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pip uninstall package_name -y
+pip uninstall mushan -y
 
 python setup.py clean
 python setup.py install

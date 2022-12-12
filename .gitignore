@@ -114,3 +114,8 @@ files.txt
 
 # mac os
 .DS_Store
+
+# notebook
+.ipynb
+
+scripts/

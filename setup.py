@@ -3,12 +3,12 @@ import sys
 from setuptools import setup
 from setuptools import find_packages
 
-NAME = "package_name"
-AUTHOR = "your user name"
-EMAIL = "your email"
-URL = "your project url"
-LICENSE = "your license"
-DESCRIPTION = "your project description"
+NAME = "mushan"
+AUTHOR = "Mushan"
+EMAIL = "wwd137669793@gmail.com"
+URL = "None"
+LICENSE = "None"
+DESCRIPTION = "Personal toolkit."
 
 if sys.version_info < (3, 6, 0):
     raise RuntimeError(f"{NAME} requires Python >=3.6.0, but yours is {sys.version}!")
@@ -23,7 +23,7 @@ try:
                 break
         exec(v_line) # get __version__ from __init__.py
 except FileNotFoundError:
-    __version__ = "0.0.0"
+    __version__ = "0.0.2"
 
 try:
     with open("README.md", encoding="utf8") as f_r:
@@ -36,8 +36,9 @@ if __name__ == "__main__":
         name=NAME,
         version=__version__,
         author=AUTHOR,
+        url="https://github.com/mushanshanshan/mushan-pip",
         author_email=EMAIL,
-        url=URL,
+        Homepage=URL,
         license=LICENSE,
         description=DESCRIPTION,
         packages=find_packages(),
@@ -48,16 +49,16 @@ if __name__ == "__main__":
         long_description_content_type="text/markdown",
         entry_points={
             "console_scripts": [
-                "package_name=package_name.shell:run"
+                "mushan=mushan.shell:run"
             ]
         },
         package_data={
-            "package_name": ["src/*.txt"]
+            "mushan": ["src/*.txt"]
         },
         zip_safe=True,
         classifiers=[
             "Programming Language :: Python :: 3",
-            f"License :: OSI Approved :: {LICENSE}",
+            "License :: OSI Approved :: MIT License",
             "Operating System :: OS Independent",
         ],
         python_requires=">=3.6"

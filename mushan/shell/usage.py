@@ -1,6 +1,6 @@
 from time import ctime
 
-from package_name import __version__
+from mushan import __version__
 
 
 def run():
