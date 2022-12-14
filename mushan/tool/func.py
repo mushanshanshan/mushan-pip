@@ -4,6 +4,7 @@ import os
 import logging
 import pickle
 
+
 def disable_logger(logger_name: List):
     for n in logger_name:
         logger = logging.getLogger(n)
@@ -19,3 +20,8 @@ def load_text(filename):
     with open(filename, "r") as f:
         text = f.readlines()
     return text
+
+
+def dump_pickle(data, filename):
+    with open(filename, "wb") as f:
+        pickle.dump(data, f)

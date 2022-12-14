@@ -1,5 +1,7 @@
 import torch
 import os
+from varname import nameof
+
 
 def get_device():
     
@@ -40,3 +42,5 @@ def set_cuda(gpus=None):
         print("Current CUDA Devices: {}".format(torch.cuda.current_device()))
         print("Total Visible CUDA Device Count: {}".format(torch.cuda.device_count()))
     
+def printshape(var):
+    print(f"{nameof(var)}: {var.shape}")
