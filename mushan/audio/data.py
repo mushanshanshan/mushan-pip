@@ -15,12 +15,17 @@ def convto2205(ori_audio_path):
     os.remove(input_name)
 
 
-def torch_load_audio(audio_path, norm=True, sr=22050):
+def torch_load_audio(audio_path, norm=True, sr=None):
     sampling_rate, data = read(audio_path)
-    assert sr == sampling_rate
-    data = torch.FloatTensor(data.astype(np.float32))
     
+    if sr != None:
+        assert sr == sampling_rate
+        
     if norm:
         data = data / 32768.0
+        
+    data = torch.FloatTensor(data.astype(np.float32))
     
-    return data
+
+    
+    return data, sampling_rate
